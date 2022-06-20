@@ -6,7 +6,7 @@ module.exports = async function (deployer, network, accounts) {
     await deployer.deploy(Tether)
     const tether = await Tether.deployed()
 
-    await deployer.deploy(Reward)
+    await deployer.deploy(Reward) 
     const reward = await Reward.deployed()
 
     await deployer.deploy(DBank, reward.address, tether.address)
