@@ -23,13 +23,13 @@ contract DBank {
     function depositTokens (uint _amount) public {
         require (_amount > 0, "amount must be greater than 0");
         // Transfer tokens to contrack address for staking
-        tether.transferFrom(msg.sender, address(this), _amount);
+        tether.transferFrom(msg.sender, address(this), _amount); 
         
         // Update staking balance
         stakingBalance[msg.sender] = stakingBalance[msg.sender] + _amount;
 
-        if(!hasStaked) {
-            stakers.push[msg.sender];
+        if(!hasStaked[msg.sender]) {
+            stakers.push(msg.sender);
         }
         // Update staking balance
         isStaking[msg.sender] = true;

@@ -48,4 +48,22 @@ contract('DBank', ([owner, customer]) => {
             assert.equal(balance, toWei('1000000'))
         })
     })
+
+    describe('Staking Test', async () => {
+        it('rewards tokens for staking', async () => {
+            let result
+            //Check investor balance
+            result = await tether.balanceOf(customer)
+            assert.equal(result.toString(), toWei('100'), 'Customer balance before staking')
+            //Check Staking of Customer for 100 Tokens
+            await tether.approve(dbank.address, toWei('100'), {from: customer})
+            await dbank.depositTokens(toWei('100'), {from: customer})
+            //Check balanceof customer after staking
+            result = await tether.balanceOf(customer)
+            assert.equal(result.toString(), toWei('0'), 'Customer balance before staking')
+            // Check Balance of the bank
+            let bankBalance
+            bankBalance = await tether.balanceOf(owner)
+        })  
+    })
 })
