@@ -13,7 +13,7 @@ module.exports = async function (deployer, network, accounts) {
     const dbank = await DBank.deployed()
 
     // Transfer all reward tokens to the bank
-    await transfer(DBank.address, '1000000000000000000000000')
+    await reward.transfer(DBank.address, '1000000000000000000000000')
 
     //Distribute 100 tokens to the Investor automatically
     await tether.transfer(accounts[1], '100000000000000000') 
