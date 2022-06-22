@@ -72,4 +72,12 @@ contract('DBank', ([owner, customer]) => {
         assert.equal(stakingValue.toString(), 'true')
        })
     })
+    
+    describe('Reward Tokens Tests', async () => {
+        it('Reward Tokens', async () => {
+            let rewardToken
+            rewardToken = await dbank.issueTokens({from: owner})
+            assert.equal(balanceOf[rewardToken], '0')
+        })
+    })
 }) 
