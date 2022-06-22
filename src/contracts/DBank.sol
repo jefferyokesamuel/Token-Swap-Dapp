@@ -24,7 +24,6 @@ contract DBank {
         require (_amount > 0, "amount must be greater than 0");
         // Transfer tokens to contrack address for staking
         tether.transferFrom(msg.sender, address(this), _amount); 
-        
         // Update staking balance
         stakingBalance[msg.sender] = stakingBalance[msg.sender] + _amount;
 
@@ -34,5 +33,17 @@ contract DBank {
         // Update staking balance
         isStaking[msg.sender] = true;
         hasStaked[msg.sender] = true;
+    }
+
+    //Issue Rewards
+    function issueTokens() public {
+        require(msg.sender == owner, "The caller must be the owner")
+        for(uint i = 0; i < stakers.length; i++) {
+            address recipient = stakers[i];
+            uint balance = stakingBalance[recipient];
+            if (balance > 0) {
+            reward.transfer(recipient, balance)
+            }
+        }
     }
 }

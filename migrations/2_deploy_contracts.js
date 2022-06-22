@@ -1,7 +1,7 @@
 const Tether = artifacts.require('Tether')
 const Reward = artifacts.require('Reward')
 const DBank = artifacts.require('DBank')
-
+ 
 module.exports = async function (deployer, network, accounts) {
     await deployer.deploy(Tether)
     const tether = await Tether.deployed()

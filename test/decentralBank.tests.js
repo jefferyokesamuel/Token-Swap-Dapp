@@ -63,7 +63,13 @@ contract('DBank', ([owner, customer]) => {
             assert.equal(result.toString(), toWei('0'), 'Customer balance before staking')
             // Check Balance of the bank
             let bankBalance
-            bankBalance = await tether.balanceOf(owner)
-        })  
+            bankBalance = await tether.balanceOf(dbank.address)
+            assert.equal(bankBalance, toWei('100')) 
+        })
+       it ('Is Staking balance', async () => {
+        let stakingValue
+        stakingValue = await dbank.isStaking(customer)
+        assert.equal(stakingValue.toString(), 'true')
+       })
     })
-})
+}) 
