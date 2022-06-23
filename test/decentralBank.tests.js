@@ -77,7 +77,8 @@ contract('DBank', ([owner, customer]) => {
         it('Reward Tokens', async () => {
             await dbank.issueTokens({from: owner})
             await dbank.issueTokens({from: customer}).should.be.rejected
-        
+            //Unstake Coins
+            await dbank.unstakeTokens({from: customer})
         })    
     }) 
 }) 

@@ -49,11 +49,14 @@ contract DBank {
     }
 
     //UnStaking Tokens
-    function unStaking( uint _amount) public {
-        require(msg.sender == customer);
-        require(amount > 0);
-        tether.transferFrom(msg.sender, address(this), amount);
-        stakingBalance[msg.sender] = stakingBalance[msg.sender] - _amount;
+    function unstakeTokens() public {
+        uint balance; 
+        balance = stakingBalance[msg.sender];
+
+        tether.transfer(msg.sender, balance);
+        
+        stakingBalance[msg.sender] = 0;
+        isStaking = false;
 
     }
 }
