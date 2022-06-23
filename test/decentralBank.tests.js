@@ -79,6 +79,16 @@ contract('DBank', ([owner, customer]) => {
             await dbank.issueTokens({from: customer}).should.be.rejected
             //Unstake Coins
             await dbank.unstakeTokens({from: customer})
+
+            //Check unstake balance
+            result = await tether.balanceOf(customer)
+            assert.equal(result.toString(), toWei('100'), 'Customer balance after unstaking')
+            //Check Updated Balance of Dbank
+            result = await tether.balanceOf(dbank.address)
+            assert.equal(result.toString(), '0')
+            //Check balanceof customer after staking
+            result = await dbank.isStaking(customer)
+            assert.equal(result.toString(), 'false')
         })    
     }) 
 }) 

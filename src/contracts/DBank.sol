@@ -54,9 +54,9 @@ contract DBank {
         balance = stakingBalance[msg.sender];
 
         tether.transfer(msg.sender, balance);
-        
+
         stakingBalance[msg.sender] = 0;
-        isStaking = false;
+        isStaking[msg.sender] = false;
 
     }
 }
