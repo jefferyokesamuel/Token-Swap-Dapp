@@ -18,6 +18,7 @@ contract DBank {
     constructor (Reward _reward, Tether _tether) public {
         reward = _reward;
         tether = _tether;
+        owner = msg.sender;
     }
 
     function depositTokens (uint _amount) public {
@@ -45,5 +46,14 @@ contract DBank {
             reward.transfer(recipient, balance);
             }
         }
+    }
+
+    //UnStaking Tokens
+    function unStaking( uint _amount) public {
+        require(msg.sender == customer);
+        require(amount > 0);
+        tether.transferFrom(msg.sender, address(this), amount);
+        stakingBalance[msg.sender] = stakingBalance[msg.sender] - _amount;
+
     }
 }

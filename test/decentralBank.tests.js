@@ -75,9 +75,9 @@ contract('DBank', ([owner, customer]) => {
     
     describe('Reward Tokens Tests', async () => {
         it('Reward Tokens', async () => {
-            let rewardToken
-            rewardToken = await dbank.issueTokens({from: owner})
-            assert.equal(balanceOf[rewardToken], '0')
-        })
-    })
+            await dbank.issueTokens({from: owner})
+            await dbank.issueTokens({from: customer}).should.be.rejected
+        
+        })    
+    }) 
 }) 
