@@ -24,7 +24,7 @@ class App extends Component {
     async loadBlockchainData() {
         const web3 = window.web3
         const account = await web3.eth.getAccounts()
-        this.setState({account: account[1]})
+        this.setState({account: account[0]})
         console.log(account)
     }
 
