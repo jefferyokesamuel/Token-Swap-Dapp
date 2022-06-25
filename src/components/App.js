@@ -3,6 +3,8 @@ import './App.css'
 import Navbar from './Navbar.js'
 import Web3 from "web3";
 import Tether from '../truffle_abis/Tether.json' 
+import Reward from '../truffle_abis/Reward.json'
+import DBank from '../truffle_abis/DBank.json'
 
 class App extends Component {
 
@@ -40,6 +42,27 @@ class App extends Component {
             console.log(tetherBalance)
         } else {
             window.alert('Tether Contract is not detected')
+        }
+
+        //Loading Reward Contract
+        const rewardData = Reward.networks[networkId]
+        if(rewardData) {
+            const reward = new web3.eth.Contract(Reward.abi, rewardData.address)
+            this.setState({reward})
+            let rewardBalance = await reward.methods.balanceOf(this.state.account).call()
+            this.setState({rewardBalance: rewardBalance.toString()})
+            console.log(rewardBalance)
+        } else {
+            window.alert('Reward Contract was not deployed')
+        }
+
+        //Loading Dbank and staking balance
+        const dbankData = DBank.networks[networkId]
+        if(dbankData) {
+            const dbank = new web3.eth.Contract(DBank.abi,  dbankData.address)
+            this.setState({dbank})
+            const stakingBalance = await dbank.methods.stakingBalance(this.state.account).call()
+            this.setState({stakingBalance})
         }
     }
 
