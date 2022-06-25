@@ -6,10 +6,11 @@ import Web3 from "web3";
 class App extends Component {
 
     async UNSAFE_componentWillMount() {
-        await this.loadweb3()
+        await this.loadWeb3()
+        await this.loadBlockchainData()
     }
 
-    async Web3() {
+    async loadWeb3() {
         if(window.ethereum) {
             window.web3 = new Web3(window.ethereum)
             await window.ethereum.enable()
@@ -19,10 +20,25 @@ class App extends Component {
             alert('No Ethereum browser detected, Checkout MetaMask')
         }
     }
+
+    async loadBlockchainData() {
+        const web3 = window.web3
+        const account = await web3.eth.getAccounts()
+        this.setState({account: account[1]})
+        console.log(account)
+    }
+
     constructor(props) {
         super(props)
         this.state = {
-            account: '0x0'
+            account: '0x0',
+            tether: {},
+            reward: {},
+            dbank: {},
+            tetherBalance: '0',
+            rewardBalance: '0',
+            stakingBalance: '0',
+            loading: true
         }
     }
     // React code goes here 
@@ -31,7 +47,7 @@ class App extends Component {
             <div>
                 <Navbar account={this.state.account}/>
                 <div className='text-center'>
-                    <h>Hello World</h>
+                    <h1>Hello World</h1>
                  </div>
             </div>
         )
