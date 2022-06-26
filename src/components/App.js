@@ -64,6 +64,7 @@ class App extends Component {
             const stakingBalance = await dbank.methods.stakingBalance(this.state.account).call()
             this.setState({stakingBalance})
         }
+        this.setState({loading: false})
     }
 
     constructor(props) {
@@ -85,7 +86,9 @@ class App extends Component {
             <div>
                 <Navbar account={this.state.account}/>
                 <div className='text-center'>
-                    <h1>Hello World</h1>
+                    <h1>
+                        {console.log(this.state.loading)}
+                    </h1>
                  </div>
             </div>
         )
