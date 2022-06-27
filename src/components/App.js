@@ -52,7 +52,7 @@ class App extends Component {
             let rewardBalance = await reward.methods.balanceOf(this.state.account).call()
             this.setState({rewardBalance: rewardBalance.toString()})
             console.log(rewardBalance)
-        } else {
+        } else  {
             window.alert('Reward Contract was not deployed')
         }
 
