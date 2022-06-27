@@ -1,6 +1,7 @@
 import React, {Component} from "react";
 import './App.css'
 import Navbar from './Navbar.js'
+
 import Web3 from "web3";
 import Tether from '../truffle_abis/Tether.json' 
 import Reward from '../truffle_abis/Reward.json'
@@ -89,7 +90,7 @@ class App extends Component {
                     <h1>
 
                         {console.log(this.state.loading )}
-                        
+
                     </h1>
                  </div>
             </div>
