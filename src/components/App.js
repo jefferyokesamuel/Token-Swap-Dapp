@@ -87,7 +87,7 @@ class App extends Component {
                 <Navbar account={this.state.account}/>
                 <div className='text-center'>
                     <h1>
-                        {console.log(this.state.loading)}
+                        {console.log(this.state.loading )}
                     </h1>
                  </div>
             </div>
