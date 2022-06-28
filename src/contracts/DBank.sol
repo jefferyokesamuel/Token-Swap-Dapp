@@ -1,6 +1,7 @@
 pragma solidity ^0.5.0;
 
 import './Tether.sol';
+
 import './Reward.sol';
 
 contract DBank {
@@ -51,6 +52,7 @@ contract DBank {
     //UnStaking Tokens
     function unstakeTokens() public {
         uint balance; 
+        
         balance = stakingBalance[msg.sender];
 
         tether.transfer(msg.sender, balance);
