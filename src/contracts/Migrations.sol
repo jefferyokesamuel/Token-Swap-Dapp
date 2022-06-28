@@ -7,6 +7,7 @@ contract Migrations {
     constructor() public {
         owner = msg.sender;
     }
+    
     modifier restricted() {
         if (msg.sender == owner) _;   
     }
