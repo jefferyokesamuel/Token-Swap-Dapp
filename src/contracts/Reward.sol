@@ -38,6 +38,7 @@ contract Reward {
         emit Approval(msg.sender, _spender, _value);
     }
 
+
     function transferFrom(address _from, address _to, uint256 _amount) public returns (bool success){
         require(_amount <= balanceOf[_from], "Your balance is smaller than the amount");
         require(_amount <= allowance[_from][msg.sender]);
