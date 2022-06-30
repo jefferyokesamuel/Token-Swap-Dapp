@@ -1,12 +1,11 @@
 import React, {Component} from "react";
 import './App.css'
 import Navbar from './Navbar.js'
-
 import Web3 from "web3";
-
 import Tether from '../truffle_abis/Tether.json' 
 import Reward from '../truffle_abis/Reward.json'
 import DBank from '../truffle_abis/DBank.json'
+import Main from './Main.js'
 
 class App extends Component {
 
