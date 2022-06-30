@@ -30,7 +30,8 @@ class Main extends Component {
                                 <input 
                                 type="text"
                                 placeholder='0'
-                                required></input> 
+                                required />
+                                <div className='
                             </div>
                         </div>
                     </form>
