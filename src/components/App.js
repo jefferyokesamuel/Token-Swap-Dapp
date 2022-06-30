@@ -87,12 +87,10 @@ class App extends Component {
         return (
             <div>
                 <Navbar account={this.state.account}/>
-                <div className='text-center'>
-                    <h1>
+                <div className='container-fluid mt-5'>
+                    <div className='row'>
 
-                        {console.log(this.state.loading )}
-
-                    </h1>
+                    </div>
                  </div>
             </div>
         )
