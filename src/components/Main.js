@@ -19,6 +19,22 @@ class Main extends Component {
                         </tr>
                     </tbody>
                 </table>
+                <div className='card mb-2' style={{opacity: '.9'}}>
+                    <form className='mb-3'>
+                        <div style={{borderSpace: '0 1em'}}>
+                            <label className='float-left' style={{marginLeft: '15px'}}><b>State Token</b></label>
+                            <span className='float-right' style={{marginRight: '8px'}}>
+                                Balance:
+                            </span>
+                            <div className='input-gropu mb-4'>
+                                <input 
+                                type="text"
+                                placeholder='0'
+                                required></input> 
+                            </div>
+                        </div>
+                    </form>
+                </div>
             </div>
         )
     }
