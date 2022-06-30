@@ -1,5 +1,5 @@
 import React, {Component} from 'react';
-
+import tether from '../tether.png'
 class Main extends Component {
 
     render () {
@@ -31,7 +31,12 @@ class Main extends Component {
                                 type="text"
                                 placeholder='0'
                                 required />
-                                <div className='
+                                <div className='input-grouped-open'>
+                                    <div className='input-group-text'>
+                                        <img alt='tether' src={tether} />
+                                        &nbps;&nbps;&nbps;USDT
+                                    </div>
+                                </div>
                             </div>
                         </div>
                     </form>
