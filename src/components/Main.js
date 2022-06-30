@@ -21,7 +21,7 @@ class Main extends Component {
                 </table>
                 <div className='card mb-2' style={{opacity: '.9'}}>
                     <form className='mb-3'>
-                        <div style={{borderSpace: '0 1em'}}>
+                        <div style={{borderSpacing: '0 1em'}}>
                             <label className='float-left' style={{marginLeft: '15px'}}><b>State Token</b></label>
                             <span className='float-right' style={{marginRight: '8px'}}>
                                 Balance:
@@ -31,7 +31,7 @@ class Main extends Component {
                                 type="text"
                                 placeholder='0'
                                 required />
-                                <div className='input-grouped-open'>
+                                <div className='input-group-open'>
                                     <div className='input-group-text'>
                                         <img src={tether} alt='tether' height='32' />
                                         &nbsp;&nbsp;&nbsp;USDT
