@@ -28,7 +28,7 @@ class App extends Component {
     async loadBlockchainData() {
         const web3 = window.web3
         const account = await web3.eth.getAccounts()
-        this.setState({account: account[0]})
+        this.setState({account: account[3]})
         console.log(account)
         const networkId = await web3.eth.net.getId()
         console.log(networkId, 'Network Id')
