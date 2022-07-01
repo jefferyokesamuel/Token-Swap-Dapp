@@ -69,6 +69,11 @@ class App extends Component {
     }
 
     //Two functions one that stakes and unstakes, and interacts with our dbank
+
+    //Staking Functuin
+    stakeTokens = (amount) => {
+        
+    }
     constructor(props) {
         super(props)
         this.state = {
