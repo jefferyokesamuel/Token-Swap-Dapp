@@ -68,6 +68,7 @@ class App extends Component {
         this.setState({loading: false})
     }
 
+    //Two functions one that stakes and unstakes, and interacts with our dbank
     constructor(props) {
         super(props)
         this.state = {
