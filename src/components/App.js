@@ -87,7 +87,10 @@ class App extends Component {
         {this.state.loading ? content =
         <p id='loader' className='text-center' style={{margin: '30px'}}>
             Loading ...........
-        </p> : content = <Main />}
+        </p> : content = 
+        <Main  tetherBalance = {this.state.tetherBalance}
+        rewardBalance = {this.state.rewardBalance}
+        stakingBalance = {this.state.stakingBalance}/>}
         return (
             <div>
                 <Navbar account={this.state.account}/>

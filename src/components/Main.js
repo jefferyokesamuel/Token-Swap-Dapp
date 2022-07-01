@@ -3,6 +3,7 @@ import tether from '../tether.png'
 class Main extends Component {
 
     render () {
+        console.log(this.props.stakingBalance)
         return (
             <div id='content' className='mt-3'>
                 <table className='table text-muted text-center'>
