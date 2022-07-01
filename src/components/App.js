@@ -110,7 +110,9 @@ class App extends Component {
         <Main  tetherBalance = {this.state.tetherBalance}
         rewardBalance = {this.state.rewardBalance}
         stakingBalance = {this.state.stakingBalance}
-        stakeTokens = {this.stakeTokens}/>
+        stakeTokens = {this.stakeTokens}
+        unstakeTokens = {this.unstakeTokens}
+        />
 
         return (
             <div>

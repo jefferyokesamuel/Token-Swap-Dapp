@@ -12,7 +12,7 @@ class Main extends Component {
                         <th scope='col'>Reward Balance</th>
                     </tr>
                     </thead>
-                    <tbody>
+                    <tbody> 
                         <tr style={{color:'black'}}>
                             <td>{window.web3.utils.fromWei(this.props.stakingBalance, 'Ether')} USDT</td>
                             <td>{window.web3.utils.fromWei(this.props.rewardBalance, 'Ether')} RWD</td>
