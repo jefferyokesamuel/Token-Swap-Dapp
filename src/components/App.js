@@ -74,7 +74,9 @@ class App extends Component {
     stakeTokens = (amount) => {
         this.setState({ loading: true })
         this.state.tether.methods.approve(this.state.dbank._address, amount).send({from: this.state.account}).on('transactionHash', (hash) => {
-        this.s    
+        this.state.dbank.methods.depositTokens(amount).send({from: this.state.account}).on('transactionHash', (hash) => {
+            this.setState({ loading: false })
+            })    
         })
     }
     constructor(props) {
