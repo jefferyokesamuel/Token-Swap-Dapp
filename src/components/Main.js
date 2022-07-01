@@ -51,9 +51,9 @@ class Main extends Component {
                         </div>
                     </form>
                     <button
-                     onSubmit={(event) => { 
+                     onClick={(event) => { 
                         event.preventDefault()
-                        this.props.unstakeTokens
+                        this.props.unstakeTokens()
                     }}
                     type='submit' className='btn btn-primary btn-lg btn-block'>WITHDRAW</button>
                     <div className='card-body text-center' style={{color: 'blue'}}>
