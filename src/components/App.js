@@ -79,6 +79,14 @@ class App extends Component {
             })    
         })
     }
+
+    //Unstaking FUnction
+    unstakeTokens = () => {
+        this.setState({ loading: true })
+        this.state.dbank.methods.unstakeTokens().send({from: this.state.account}).on('transactionHash', (hash) => {
+            this.setState({ loading: false })
+        })
+    }
     constructor(props) {
         super(props)
         this.state = {
@@ -101,7 +109,9 @@ class App extends Component {
         </p> : content = 
         <Main  tetherBalance = {this.state.tetherBalance}
         rewardBalance = {this.state.rewardBalance}
-        stakingBalance = {this.state.stakingBalance}/>}
+        stakingBalance = {this.state.stakingBalance}
+        stakeTokens = {this.stakeTokens}/>
+
         return (
             <div>
                 <Navbar account={this.state.account}/>
@@ -118,5 +128,5 @@ class App extends Component {
         )
     }
 }
-
+}
 export default App;
